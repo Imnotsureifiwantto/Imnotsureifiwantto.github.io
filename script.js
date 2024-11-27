@@ -55,3 +55,4 @@ document.getElementById("quantity").addEventListener("change", function() {
     
     document.getElementById("total").value = formattedPrice; 
 });
+
