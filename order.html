@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SurgeX Order Page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-container">
+            <h1>Order Your SurgeX</h1>
+            <p class="hero-tagline">Experience the natural energy of Guayusa!</p>
+        </div>
+    </header>
+
+    <section class="order">
+        <div class="order-container">
+            <h2>Complete Your Order</h2>
+            <form id="order-form">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <select id="quantity" name="quantity" required>
+                        <option value="1">1 Bottle</option>
+                        <option value="2">2 Bottles</option>
+                        <option value="3">3 Bottles</option>
+                        <option value="6">6 Bottles</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="address">Shipping Address</label>
+                    <textarea id="address" name="address" rows="4" placeholder="Enter your shipping address" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="total">Total Price</label>
+                    <input type="text" id="total" name="total" value="$5.99" readonly>
+                </div>
+                <button type="submit" class="btn-primary">Confirm Order</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 SurgeX. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
