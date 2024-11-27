@@ -30,7 +30,7 @@ document.getElementById("order-form").addEventListener("submit", (event) => {
     const email = document.getElementById("email").value;
     const quantity = document.getElementById("quantity").value;
     const address = document.getElementById("address").value;
-    const pricePerBottle = 5.99; 
+    const pricePerBottle = 40; 
     const totalPrice = pricePerBottle * quantity; 
 
     const formattedPrice = `$${totalPrice.toFixed(2)}`;
@@ -46,7 +46,7 @@ document.getElementById("order-form").addEventListener("submit", (event) => {
 
 document.getElementById("quantity").addEventListener("change", function() {
     const quantity = this.value;
-    const pricePerBottle = 5.99;
+    const pricePerBottle = 40;
     const totalPrice = pricePerBottle * quantity;
     const formattedPrice = `$${totalPrice.toFixed(2)}`;
     
