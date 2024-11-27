@@ -33,7 +33,7 @@ document.getElementById("order-form").addEventListener("submit", (event) => {
     const pricePerBottle = 40; 
     const totalPrice = pricePerBottle * quantity; 
 
-    const formattedPrice = `$${totalPrice.toFixed(2)}`;
+    const formattedPrice = `EGP${totalPrice.toFixed(2)}`;
 
     alert(
         `Thank you, ${name}!\n\nYour order for ${quantity} bottle(s) of SurgeX has been placed.\nWe will send a confirmation to ${email}.\n\nShipping to:\n${address}\n\nTotal Price: ${formattedPrice}`
