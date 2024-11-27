@@ -6,6 +6,7 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
         });
     });
 });
+
 document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("section");
 
@@ -23,11 +24,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     sections.forEach((section) => observer.observe(section));
 });
+
 document.getElementById("order-form").addEventListener("submit", (event) => {
     event.preventDefault(); 
 
     const name = document.getElementById("name").value;
     const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
     const quantity = document.getElementById("quantity").value;
     const address = document.getElementById("address").value;
     const pricePerBottle = 40; 
@@ -36,7 +39,7 @@ document.getElementById("order-form").addEventListener("submit", (event) => {
     const formattedPrice = `EGP${totalPrice.toFixed(2)}`;
 
     alert(
-        `Thank you, ${name}!\n\nYour order for ${quantity} bottle(s) of SurgeX has been placed.\nWe will send a confirmation to ${email}.\n\nShipping to:\n${address}\n\nTotal Price: ${formattedPrice}`
+        `Thank you, ${name}!\n\nYour order for ${quantity} bottle(s) of SurgeX has been placed.\nWe will confirm the delivery charges with you via email or message.\n\nShipping to:\n${address}\nPhone: ${phone}\n\nTotal Price (excluding delivery): ${formattedPrice}`
     );
 
     document.getElementById("order-form").reset();
