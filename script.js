@@ -48,7 +48,7 @@ document.getElementById("quantity").addEventListener("change", function() {
     const quantity = this.value;
     const pricePerBottle = 40;
     const totalPrice = pricePerBottle * quantity;
-    const formattedPrice = `$${totalPrice.toFixed(2)}`;
+    const formattedPrice = `EGP${totalPrice.toFixed(2)}`;
     
     document.getElementById("total").value = formattedPrice; 
 });
