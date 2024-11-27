@@ -27,6 +27,10 @@
                     <input type="email" id="email" name="email" placeholder="Enter your email" required>
                 </div>
                 <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+                </div>
+                <div class="form-group">
                     <label for="quantity">Quantity</label>
                     <select id="quantity" name="quantity" required>
                         <option value="1">1 Bottle</option>
@@ -40,7 +44,7 @@
                     <textarea id="address" name="address" rows="4" placeholder="Enter your shipping address" required></textarea>
                 </div>
                 <div class="form-group">
-                    <label for="total">Total Price</label>
+                    <label for="total">Total Price (excluding delivery)</label>
                     <input type="text" id="total" name="total" value="EGP40" readonly>
                 </div>
                 <button type="submit" class="btn-primary">Confirm Order</button>
