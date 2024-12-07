@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order - Epilexus</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .order-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            padding: 3rem 0;
+        }
+
+        .product-image {
+            text-align: center;
+        }
+
+        .product-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .order-form {
+            background-color: #f8ecd6;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .order-form h2 {
+            margin-bottom: 1rem;
+        }
+
+        .order-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .order-form input[type="text"], .order-form input[type="number"] {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .order-form .total-price {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .order-form button {
+            background-color: #5a403b;
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .order-form button:hover {
+            background-color: #3e2b26;
+        }
+
+        .notification, .receipt {
+            display: none;
+            padding: 1rem;
+            margin-top: 1rem;
+            background-color: #45ADA8;
+            color: white;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .receipt {
+            background-color: #f1f1f1;
+            color: #333;
+            text-align: left;
+            border: 1px solid #ddd;
+            font-size: 0.9rem;
+        }
+
+        .receipt h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            padding: 1rem;
+            background-color: #5a403b;
+            color: white;
+            border-radius: 5px 5px 0 0;
+        }
+
+        .receipt p {
+            padding: 1rem;
+            margin: 0;
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <h1 class="logo">Epilexus</h1>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="order.html">Shop</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="order-container container">
+        <div class="product-image">
+            <img src="image2.png" alt="Epilexus Product">
+        </div>
+        <div class="order-form">
+            <h2>Order Your Device</h2>
+            <form id="orderForm">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" placeholder="Enter your name" required>
+
+                <label for="email">Your Email</label>
+                <input type="text" id="email" placeholder="Enter your email" required>
+
+                <label for="address">Your Address</label>
+                <input type="text" id="address" placeholder="Enter your address" required>
+
+                <label for="phone">Your Phone Number</label>
+                <input type="text" id="phone" placeholder="Enter your phone number" required>
+
+                <label for="quantity">Quantity</label>
+                <input type="number" id="quantity" min="1" value="1">
+
+                <div class="total-price" id="totalPrice">Total Price: 10,000 EGP</div>
+                <button type="button" id="placeOrder">Place Order</button>
+            </form>
+            <div class="notification" id="notification">Your order has been placed successfully!</div>
+            <div class="receipt" id="receipt">
+                <h3>Order Receipt</h3>
+                <p id="receiptName"></p>
+                <p id="receiptEmail"></p>
+                <p id="receiptAddress"></p>
+                <p id="receiptPhone"></p>
+                <p id="receiptQuantity"></p>
+                <p id="receiptPrice"></p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2024 Epilexus. All Rights Reserved.</p>
+            <p>Contact Us: <a href="mailto:info@epilexus.charm.rest">info@epilexus.charm.rest</a></p>
+        </div>
+    </footer>
+
+    <script>
+        const quantityInput = document.getElementById('quantity');
+        const totalPriceDiv = document.getElementById('totalPrice');
+        const placeOrderButton = document.getElementById('placeOrder');
+        const notification = document.getElementById('notification');
+        const receipt = document.getElementById('receipt');
+        const receiptName = document.getElementById('receiptName');
+        const receiptEmail = document.getElementById('receiptEmail');
+        const receiptAddress = document.getElementById('receiptAddress');
+        const receiptPhone = document.getElementById('receiptPhone');
+        const receiptQuantity = document.getElementById('receiptQuantity');
+        const receiptPrice = document.getElementById('receiptPrice');
+
+        const pricePerUnit = 10000;
+
+        // Update total price dynamically
+        quantityInput.addEventListener('input', () => {
+            const quantity = Math.max(1, parseInt(quantityInput.value) || 1);
+            totalPriceDiv.textContent = `Total Price: ${quantity * pricePerUnit} EGP`;
+        });
+
+        // Show notification and generate receipt
+        placeOrderButton.addEventListener('click', () => {
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const address = document.getElementById('address').value;
+            const phone = document.getElementById('phone').value;
+            const quantity = Math.max(1, parseInt(quantityInput.value) || 1);
+            const totalPrice = quantity * pricePerUnit;
+
+            if (!name || !email || !address || !phone) {
+                alert('Please fill in all required fields.');
+                return;
+            }
+
+            notification.style.display = 'block';
+            setTimeout(() => {
+                notification.style.display = 'none';
+            }, 3000);
+
+            // Generate receipt
+            receiptName.textContent = `Name: ${name}`;
+            receiptEmail.textContent = `Email: ${email}`;
+            receiptAddress.textContent = `Address: ${address}`;
+            receiptPhone.textContent = `Phone: ${phone}`;
+            receiptQuantity.textContent = `Quantity: ${quantity}`;
+            receiptPrice.textContent = `Total Price: ${totalPrice} EGP`;
+
+            receipt.style.display = 'block';
+        });
+    </script>
+</body>
+</html>
