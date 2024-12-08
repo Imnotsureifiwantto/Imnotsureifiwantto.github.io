@@ -5,22 +5,7 @@ body {
     padding: 0;
     line-height: 1.6;
     color: #333;
-    background: linear-gradient(45deg, #3a6186, #89253e); /* Gradient for fallback */
-    background-size: 400% 400%;
-    animation: gradientAnimation 15s ease infinite;
-}
-
-/* Gradient Animation */
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
+    background-color: #fff; /* Keep the original background color */
 }
 
 .container {
@@ -31,7 +16,7 @@ body {
 
 /* Navbar Styles */
 .navbar {
-    background: rgba(51, 51, 51, 0.8); /* Transparent navbar background */
+    background: #333;
     color: #fff;
     padding: 10px 0;
 }
@@ -61,7 +46,7 @@ body {
 
 .navbar nav ul li a {
     color: #fff;
-    text-decoration: none; /* Keeps links clean */
+    text-decoration: none;
     font-size: 1rem;
 }
 
@@ -71,9 +56,10 @@ body {
 
 /* Hero Section */
 .hero {
-    text-align: center;
-    color: #fff;
+    background: #f4f4f4;
+    color: #333;
     padding: 60px 0;
+    text-align: center;
 }
 
 .hero-title {
@@ -89,15 +75,15 @@ body {
 /* Shop Button */
 .cta-button {
     display: inline-block;
-    background-color: #f5deb3; /* Beige color */
+    background-color: #f5deb3; /* Beige background */
     color: #000; /* Black font */
     padding: 12px 24px;
     font-size: 1.2rem;
     text-align: center;
     border-radius: 5px;
     text-decoration: none; /* Remove underline */
-    margin-top: 8px; /* Moves the button down */
-    border: none;
+    margin-top: 8px; /* Move down */
+    border: 2px solid #000; /* Optional: Black border */
 }
 
 .cta-button:hover {
@@ -107,7 +93,7 @@ body {
 /* Features Section */
 .features-section {
     padding: 40px 0;
-    background: rgba(255, 255, 255, 0.9); /* Slightly transparent white for better blending */
+    background: #fff;
 }
 
 .features-section h2 {
@@ -122,7 +108,7 @@ body {
 }
 
 .feature-card {
-    background: #fff; /* Original card background */
+    background: #f4f4f4;
     padding: 20px;
     border-radius: 8px;
     text-align: center;
@@ -131,13 +117,13 @@ body {
 
 .feature-card .icon {
     font-size: 2rem;
-    color: #333; /* Original icon color */
+    color: #333;
     margin-bottom: 10px;
 }
 
 /* Footer */
 .footer {
-    background: rgba(51, 51, 51, 0.8); /* Transparent footer background */
+    background: #333;
     color: #fff;
     text-align: center;
     padding: 10px 0;
