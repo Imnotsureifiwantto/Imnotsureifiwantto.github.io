@@ -5,7 +5,22 @@ body {
     padding: 0;
     line-height: 1.6;
     color: #333;
-    background-color: #fff; /* Keep the original background color */
+    background: linear-gradient(45deg, #3a6186, #89253e); /* Animated gradient background */
+    background-size: 400% 400%;
+    animation: gradientAnimation 15s ease infinite;
+}
+
+/* Gradient Animation */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .container {
@@ -16,7 +31,7 @@ body {
 
 /* Navbar Styles */
 .navbar {
-    background: #333;
+    background: rgba(0, 0, 0, 0.8); /* Dark transparent navbar */
     color: #fff;
     padding: 10px 0;
 }
@@ -56,10 +71,10 @@ body {
 
 /* Hero Section */
 .hero {
-    background: #f4f4f4;
-    color: #333;
-    padding: 60px 0;
     text-align: center;
+    color: #fff;
+    padding: 60px 0;
+    background: url('eyes-background.jpg') no-repeat center center/cover; /* Hero background restored */
 }
 
 .hero-title {
@@ -75,19 +90,18 @@ body {
 /* Shop Button */
 .cta-button {
     display: inline-block;
-    background-color: #f5deb3; /* Beige background */
-    color: #000; /* Black font */
+    background-color: #f5deb3; /* Beige color */
+    color: #000; /* Black text */
     padding: 12px 24px;
     font-size: 1.2rem;
     text-align: center;
     border-radius: 5px;
-    text-decoration: none; /* Remove underline */
-    margin-top: 8px; /* Move down */
-    border: 2px solid #000; /* Optional: Black border */
+    text-decoration: none; /* No underline */
+    margin-top: 10px; /* Moves button slightly down */
 }
 
 .cta-button:hover {
-    background-color: #e5cda3; /* Slightly darker beige on hover */
+    background-color: #e5cda3; /* Slightly darker beige */
 }
 
 /* Features Section */
@@ -108,7 +122,7 @@ body {
 }
 
 .feature-card {
-    background: #f4f4f4;
+    background: #fff;
     padding: 20px;
     border-radius: 8px;
     text-align: center;
@@ -123,7 +137,7 @@ body {
 
 /* Footer */
 .footer {
-    background: #333;
+    background: rgba(0, 0, 0, 0.8); /* Dark transparent footer */
     color: #fff;
     text-align: center;
     padding: 10px 0;
