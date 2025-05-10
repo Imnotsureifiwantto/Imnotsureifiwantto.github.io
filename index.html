@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Orna Jewelry</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="header">
+    <div class="nav container">
+      <div class="logo">Orna</div>
+      <button id="cart-toggle" aria-label="Toggle Cart">🛒<span id="cart-count">0</span></button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content container">
+      <h1>Discover Timeless Elegance</h1>
+      <button id="shop-now">Shop Collection</button>
+    </div>
+  </section>
+
+  <main id="product-list" class="masonry container"></main>
+
+  <aside id="cart" aria-hidden="true">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button id="cart-close" aria-label="Close Cart">✖</button>
+    </div>
+    <ul id="cart-items"></ul>
+    <div class="cart-footer">
+      <div>Total: <span id="cart-total">0</span> EGP</div>
+      <button id="checkout" disabled>Checkout</button>
+    </div>
+  </aside>
+
+  <button id="scroll-top" aria-label="Scroll to top">⬆️</button>
+  <script src="script.js"></script>
+</body>
+</html>
